@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validator - Yoga Bagas Budhiman</title>
+    <style>
+        body{
+            background-color: limegreen;
+        }
+        .container{
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: lightgreen;
+        }
+        span {
+            visibility: hidden;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="nama" placeholder="Masukkan Nama">
+        <span>Harap lengkapi data</span>
+        <br><br>
+        <input type="email" id="email" placeholder="Masukkan Email">
+        <span>Harap lengkapi data</span>
+        <br><br>
+        <input type="time" id="waktu">
+        <span>Harap lengkapi data</span>
+        <br><br>
+        <input type="text" id="destination" placeholder="Masukkan Tujuan">
+        <span>Harap lengkapi data</span>
+        <br><br>
+        <input type="number" id="jumlah" placeholder="Tiket" min="0" max="10" width="100px">
+        <span>Harap lengkapi data</span>
+        <br><br>
+        <button onclick="validator()">Submit</button>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        let nama = document.getElementById("nama")
+        let email = document.getElementById("email")
+        let jam = document.getElementById("waktu")
+        let tujuan = document.getElementById("destination")
+        let jumlah = document.getElementById("jumlah")
+        let span = document.getElementsByTagName("span")
+        let hasil = document.getElementById("hasil")
+
+        function validator() {
+            if (nama.value == "" || nama.value.length >= 30) {
+                span[0].style.visibility = "visible"
+            }
+            if (email.value == "") {
+                span[1].style.visibility = "visible"
+            }
+            if (jam.value == "") {
+                span[2].style.visibility = "visible"
+            }
+            if (tujuan.value == "") {
+                span[3].style.visibility = "visible"
+            }
+            if (jumlah.value == "") {
+                span[4].style.visibility = "visible"
+            }else {
+                hasil.innerHTML += "<br>" + "<br>" + "Nama Anda : " + nama.value + "<br>" + "<br>"
+                hasil.innerHTML += "Email Anda : " + email.value + "<br>" + "<br>"
+                hasil.innerHTML += "Jam Keberangkatan Anda : " + jam.value + "<br>" + "<br>"
+                hasil.innerHTML += "Tujuan Anda : " + tujuan.value + "<br>" + "<br>"
+                hasil.innerHTML += "Jumlah Tiket Anda : " + jumlah.value + "<br>" + "<br>"
+            }
+        }
+    </script>
+</body>
+</html>

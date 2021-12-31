@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker - Yoga Bagas Budhiman</title>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+        #iniGambar2{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="iniGambar" onchange="ganti()">
+        <option value="">Pilih dulu gambarnya</option>
+        <option value="brz">Subaru BRZ</option>
+        <option value="supra">Toyota Supra</option>
+        <option value="lambo">Lamborgini Aventador</option>
+        <option value="dodge">Dodge Charger</option>
+        <option value="camaro">Chevrolet Camaro</option>
+        <option value="skyline">Skyline GTR</option>
+    </select>
+
+    <div id="iniGambar2"></div>
+
+    <script>
+        let mobil = document.getElementById("iniGambar")
+        let gambar = document.getElementById("iniGambar2")
+
+        function ganti() {
+             switch (mobil.value) {
+                 case "brz" :
+                     gambar.innerHTML = '<img src="images/brz.jpg" alt="">'
+                     alert("Ini gambar mobil Subaru BRZ")
+                     break;
+
+                 case "supra" :
+                     iniGambar2.innerHTML = '<img src="images/supra.jpg" alt="">'
+                     alert("Ini gambar mobil Toyota Supra")
+                     break;
+
+                 case "lambo" :
+                     iniGambar2.innerHTML = '<img src="images/lambo.jpg" alt="">'
+                     alert("Ini gambar mobil Lamborgini Aventador")
+                     break;
+
+                 case "dodge" :
+                     iniGambar2.innerHTML = '<img src="images/dodge.jpg" alt="">'
+                     alert("Ini gambar mobil Dodge Charger")
+                     break;
+
+                 case "camaro" :
+                     iniGambar2.innerHTML = '<img src="images/camaro.jpg" alt="">'
+                     alert("Ini gambar mobil Chevrolet Camaro")
+                     break;
+
+                 case "skyline" :
+                     iniGambar2.innerHTML = '<img src="images/skyline.jpg" alt="">'
+                     alert("Ini gambar mobil Skyline GTR")
+                     break;
+
+                default:
+                    gambar.innerHTML = ""
+                    break;
+             }
+        }
+    </script>
+</body>
+</html>

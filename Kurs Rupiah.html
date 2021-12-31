@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah - YogaBagasBudhiman</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+        }
+        .table {
+            width: 200px;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h2>Menghitung Kurs Rupiah</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Masukan Nilai</th>
+                    <th>Mata Uang</th>
+                    <th>Nilai Rupiah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" id="masukanAwal" onchange="iniHasil()" placeholder="Masukan Nilai Uang...">
+                    </td>
+                    <td>
+                        <select id="mataUang" onchange="iniHasil()" >
+                            <option value="Valas">Valas</option>
+                            <option value="DollarUS">Dollar US</option>             
+                            <option value="DollarSingapore">Dollar Singapore</option>             
+                            <option value="RinggitMalaysia">Ringgit Malaysia</option>             
+                            <option value="YenJepang">Yen Jepang</option>             
+                            <option value="Euro">Euro</option>             
+                            <option value="Riyal">Riyal Arab Saudi</option>             
+                        </select>
+                    </td>
+                    <td>
+                        <input id="hasil" type="text" placeholder="Nilai Rupiah...">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let masukanAwal = document.getElementById("masukanAwal")
+
+        let mataUang = document.getElementById("mataUang")
+
+        let hasil = document.getElementById("hasil")
+
+        let penampungHasil
+
+        let nf = new Intl.NumberFormat('id-ID');
+
+        function tampilHasil() {
+
+            if (mataUang.value == "DollarUS") {
+                penampungHasil = masukanAwal.value * 9915
+
+            }else if (mataUang.value == "DollarSingapore") {
+                penampungHasil = masukanAwal.value * 13472
+
+            }else if (mataUang.value == "RinggitMalaysia") {
+                penampungHasil = masukanAwal.value * 874
+
+            }else if (mataUang.value == "YenJepang") {
+                penampungHasil = masukanAwal.value * 120
+
+            }else if (mataUang.value == "Euro") {
+                penampungHasil = masukanAwal.value * 15888
+
+            }else if (mataUang.value == "Riyal") {
+                penampungHasil = masukanAwal.value * 3592
+
+            }else {
+                penampungHasil = masukanAwal * 0
+            }
+        
+            hasil.value = "Rp. " + nf.format(penampungHasil);
+
+        }
+    </script>
+</body>
+
+</html>

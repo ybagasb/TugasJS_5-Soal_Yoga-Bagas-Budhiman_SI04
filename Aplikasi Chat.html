@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Chat - YogaBagasBudhiman</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+            font-size: 30px;
+        }
+        .keluaran{
+            width: 350px;
+            height: 400px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid black;
+        }
+        .masukkan{
+            width: 315px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Aplikasi Chat</h2>
+        <div class="keluaran">
+
+        </div><br>
+        <div>
+            <input type="text" class="masukkan">
+            <button class="chat">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        let keluaranChat = document.querySelector(".keluaran");
+        const masukkanChat = document.querySelector(".masukkan");
+        const chat = document.querySelector(".chat");
+
+        chat.addEventListener("click", function(){
+            keluaranChat.innerHTML = keluaranChat.innerHTML + "<br>" + masukkanChat.value + "<br>";
+            masukkanChat.value = "";
+        })
+    </script>
+</body>
+</html>
